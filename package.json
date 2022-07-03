@@ -1,11 +1,11 @@
 {
     "name": "Launcher-Launcher",
     "preductname": "Launcher Launcher",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Launcher Mincraft ",
     "main": "src/app.js",
     "author": "Luuxis",
-    "url": "http://stealth.go.yj.fr/",
+    "url": "http://launcher.stealth-survie.fr/",
     "engines": {
         "node": "16.x.x"
     },
@@ -35,6 +35,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/TheFiery/StealthLauncher.git"
     }
 }
