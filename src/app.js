@@ -8,6 +8,10 @@ const fs = require('fs');
 const UpdateWindow = require("./assets/js/windows/updateWindow.js");
 const MainWindow = require("./assets/js/windows/mainWindow.js");
 
+const clientId = '1005825047052697640';
+const DiscordRPC = require('discord-rpc');
+const RPC = new DiscordRPC.Client({ transport: 'ipc' });
+
 let dev = process.env.NODE_ENV === 'dev';
 
 if (dev) {
@@ -76,3 +80,39 @@ autoUpdater.on('download-progress', (progress) => {
     const updateWindow = UpdateWindow.getWindow();
     if (updateWindow) updateWindow.webContents.send('download-progress', progress);
 })
+
+DiscordRPC.register(clientId);
+
+async function setActivity() {
+    if (!RPC) return;
+    RPC.setActivity({
+        details: `Viens avec nous !`,
+        state: `Joue à Minecraft moddé`,
+        startTimestamp: Date.now(),
+        largeImageKey: `large_image`,
+        largeImageText: `Minecraft Moddé`,
+        smallImageKey: `small_image`,
+        smallImageText: `+ 100 Mods`,
+        instance: false,
+        buttons: [
+            {
+                label: `Rejoindre le serveur discord!`,
+                url: `https://discord.gg/vDb42mqssH`,
+            },
+            {
+                label: `Télécharger le launcher`,
+                url: `https://github.com/TheFiery/StealthLauncher/releases/tag/1.0.8`,
+            }
+        ]
+    });
+};
+
+RPC.on('ready', async () =>  {
+    setActivity();
+
+    setInterval(() => {
+        setActivity();
+    }, 15 * 1000);
+});
+
+RPC.login({ clientId}).catch(err =>  console.error(err));

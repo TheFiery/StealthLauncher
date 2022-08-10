@@ -1,8 +1,8 @@
 {
-    "name": "Launcher-Launcher",
-    "preductname": "Launcher Launcher",
-    "version": "1.0.8",
-    "description": "Launcher Mincraft ",
+    "name": "Stealth-Launcher",
+    "preductname": "Stealth Launcher",
+    "version": "1.0.9",
+    "description": "Launcher Minecraft ",
     "main": "src/app.js",
     "author": "Luuxis",
     "url": "http://launcher.stealth-survie.fr/",
@@ -11,7 +11,7 @@
     },
     "scripts": {
         "start": "env-cmd electron .",
-        "build": "node build.js",   
+        "build": "node build.js",
         "build:win": "npm run build -- WINDOWS",
         "build:mac": "npm run build -- MAC",
         "build:linux": "npm run build -- LINUX",
@@ -22,6 +22,8 @@
         "ext": "js,html,css"
     },
     "dependencies": {
+        "discord-rpc": "^4.0.1",
+        "discord.js": "^14.1.2",
         "electron-updater": "^5.0.1",
         "minecraft-java-core": "^2.0.0",
         "node-fetch": "^2.6.7"

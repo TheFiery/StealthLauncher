@@ -21,9 +21,8 @@ class Splash {
             { "message": "Je... vie...", "author": "Luuxis" },
             { "message": "Salut je suis du code.", "author": "Luuxis" },
             { "message": "Linux n' ai pas un os, mais un kernel.", "author": "Luuxis" },
-            { "message": "Ne vend pas ton temps achète ton temps **Le résultat**", "author": "Luuxis" },
-            { "message": "La vie c'est comme une bicyclette faut avancer pour ne pas perdre l'équilibre", "author": "Luuxis" },
-            { "message": "ce launcher n'est pas un virus tu vois ?", "author": "Luuxis" },
+            { "message": "Ne vend pas ton temps achète ton temps **Le résultat**"},
+            { "message": "note ce launcher sur 5, il est bien ?"},
 
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
