@@ -101,7 +101,7 @@ async function setActivity() {
             },
             {
                 label: `Télécharger le launcher`,
-                url: `https://github.com/TheFiery/StealthLauncher/releases/tag/1.0.8`,
+                url: `https://github.com/TheFiery/StealthLauncher/releases/tag/1.1.0`,
             }
         ]
     });
@@ -112,7 +112,7 @@ RPC.on('ready', async () =>  {
 
     setInterval(() => {
         setActivity();
-    }, 15 * 1000);
+    }, 3000 * 1000);
 });
 
 RPC.login({ clientId}).catch(err =>  console.error(err));

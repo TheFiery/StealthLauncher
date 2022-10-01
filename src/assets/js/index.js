@@ -17,11 +17,10 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "Salut Mon rufton !!!", "author": "Luuxis" },
-            { "message": "Je... vie...", "author": "Luuxis" },
-            { "message": "Salut je suis du code.", "author": "Luuxis" },
-            { "message": "Linux n' ai pas un os, mais un kernel.", "author": "Luuxis" },
-            { "message": "Ne vend pas ton temps achète ton temps **Le résultat**"},
+            { "message": "Salut Mon rufton !!!", "author": "TheFiery_" },
+            { "message": "Je... vie...", "author": "TheFiery_" },
+            { "message": "Salut je suis du code.", "author": "TheFiery_" },
+            { "message": "ChArGeMeNnnnnnnt !!!!!!!!!!", "author": "TheFiery_" },
             { "message": "note ce launcher sur 5, il est bien ?"},
 
         ];
