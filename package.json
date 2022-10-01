@@ -1,7 +1,7 @@
 {
     "name": "Progress Of The Past",
     "preductname": "Progress Of The Past",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Launcher Minecraft ",
     "main": "src/app.js",
     "author": "Luuxis & TheFiery_",

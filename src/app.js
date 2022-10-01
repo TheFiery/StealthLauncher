@@ -92,7 +92,7 @@ async function setActivity() {
         largeImageKey: `large_image`,
         largeImageText: `Minecraft Moddé`,
         smallImageKey: `small_image`,
-        smallImageText: `+ 100 Mods`,
+        smallImageText: `+ 50 Mods`,
         instance: false,
         buttons: [
             {
@@ -101,7 +101,7 @@ async function setActivity() {
             },
             {
                 label: `Télécharger le launcher`,
-                url: `https://github.com/TheFiery/StealthLauncher/releases/tag/1.1.0`,
+                url: `https://github.com/TheFiery/StealthLauncher/releases/tag/1.1.1`,
             }
         ]
     });
