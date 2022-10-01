@@ -1,20 +1,17 @@
 {
-    "name": "Progress Of The Past",
+    "name": "progress_of_the_past",
     "preductname": "Progress Of The Past",
-    "version": "1.1.1",
-    "description": "Launcher Minecraft ",
+    "version": "1.1.2",
+    "description": "Launcher Mincraft",
     "main": "src/app.js",
     "author": "Luuxis & TheFiery_",
-    "url": "http://launcher.stealth-survie.fr/",
+    "url": "http://launcher.stealth-survie.fr",
     "engines": {
         "node": "16.x.x"
     },
     "scripts": {
-        "start": "env-cmd electron .",
+        "start": "cross-env-shell NODE_ENV=dev electron .",
         "build": "node build.js",
-        "build:win": "npm run build -- WINDOWS",
-        "build:mac": "npm run build -- MAC",
-        "build:linux": "npm run build -- LINUX",
         "dev": "nodemon --exec npm start"
     },
     "license": "CC0",
@@ -23,16 +20,14 @@
     },
     "dependencies": {
         "discord-rpc": "^4.0.1",
-        "discord.js": "^14.1.2",
         "electron-updater": "^5.0.1",
-        "minecraft-java-core": "^2.0.0",
+        "minecraft-java-core": "^2.4.1",
         "node-fetch": "^2.6.7"
     },
     "devDependencies": {
-        "electron": "^19.0.4",
+        "cross-env": "^7.0.3",
+        "electron": "^20.0.0",
         "electron-builder": "^23.0.3",
-        "env-cmd": "^10.1.0",
-        "javascript-obfuscator": "^4.0.0",
         "nodemon": "^2.0.16"
     },
     "repository": {

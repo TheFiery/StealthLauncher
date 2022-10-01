@@ -1,3 +1,8 @@
+/**
+ * @author Luuxis
+ * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
 const { app, ipcMain } = require('electron');
 const { Microsoft } = require('minecraft-java-core');
 const { autoUpdater } = require('electron-updater')
@@ -8,15 +13,17 @@ const fs = require('fs');
 const UpdateWindow = require("./assets/js/windows/updateWindow.js");
 const MainWindow = require("./assets/js/windows/mainWindow.js");
 
+
 const clientId = '1005825047052697640';
 const DiscordRPC = require('discord-rpc');
-const RPC = new DiscordRPC.Client({ transport: 'ipc' });
+const RPC = new DiscordRPC.Client({ transport: 'ipc' }); 
 
+let data
 let dev = process.env.NODE_ENV === 'dev';
 
 if (dev) {
     let appPath = path.resolve('./AppData/Launcher').replace(/\\/g, '/');
-    if(!fs.existsSync(appPath)) fs.mkdirSync(appPath, { recursive: true });
+    if (!fs.existsSync(appPath)) fs.mkdirSync(appPath, { recursive: true });
     app.setPath('userData', appPath);
 }
 
@@ -58,14 +65,30 @@ app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
 });
 
-ipcMain.on('update-app', () => {
-    autoUpdater.checkForUpdates();
+
+autoUpdater.autoDownload = false;
+
+ipcMain.handle('update-app', () => {
+    return new Promise(async(resolve, reject) => {
+        autoUpdater.checkForUpdates().then(() => {
+            resolve();
+        }).catch(error => {
+            resolve({
+                error: true,
+                message: error
+            })
+        })
+    })
 })
 
 autoUpdater.on('update-available', () => {
     const updateWindow = UpdateWindow.getWindow();
     if (updateWindow) updateWindow.webContents.send('updateAvailable');
 });
+
+ipcMain.on('start-update', () => {
+    autoUpdater.downloadUpdate();
+})
 
 autoUpdater.on('update-not-available', () => {
     const updateWindow = UpdateWindow.getWindow();

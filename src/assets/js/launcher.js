@@ -1,3 +1,8 @@
+/**
+ * @author Luuxis
+ * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
 'use strict';
 
 // libs 
@@ -100,6 +105,7 @@ class Launcher {
                         user_properties: refresh.user_properties,
                         meta: {
                             type: refresh.meta.type,
+                            xuid: refresh.meta.xuid,
                             demo: refresh.meta.demo
                         }
                     }

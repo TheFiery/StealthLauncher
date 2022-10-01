@@ -1,3 +1,8 @@
+/**
+ * @author Luuxis
+ * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0/
+ */
+
 'use strict';
 
 import { database, changePanel, addAccount, accountSelect } from '../utils.js';
@@ -62,6 +67,7 @@ class Login {
                     user_properties: account_connect.user_properties,
                     meta: {
                         type: account_connect.meta.type,
+                        xuid: account_connect.meta.xuid,
                         demo: account_connect.meta.demo
                     }
                 }
@@ -160,10 +166,12 @@ class Login {
 
                 cancelMojangBtn.disabled = false;
                 cancelMojangBtn.click();
+                mailInput.value = "";
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                loginBtn.style.display = "none";
+                loginBtn.style.display = "block";
+                infoLogin.innerHTML = "&nbsp;";
             }).catch(err => {
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
@@ -242,10 +250,12 @@ class Login {
 
                 cancelMojangBtn.disabled = false;
                 cancelMojangBtn.click();
+                mailInput.value = "";
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                loginBtn.style.display = "none";
+                loginBtn.style.display = "block";
+                infoLogin.innerHTML = "&nbsp;";
             }).catch(err => {
                 console.log(err)
                 cancelMojangBtn.disabled = false;
