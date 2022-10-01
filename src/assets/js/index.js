@@ -22,7 +22,9 @@ class Splash {
             { "message": "Salut je suis du code.", "author": "TheFiery_" },
             { "message": "ChArGeMeNnnnnnnt !!!!!!!!!!", "author": "TheFiery_" },
             { "message": "note ce launcher sur 5, il est bien ?"},
-            { "message": "c'est bientôt Halloween !"}
+            { "message": "c'est bientôt Halloween !"},
+            { "message": "croooooobzzz"}
+
 
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
