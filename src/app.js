@@ -124,7 +124,7 @@ async function setActivity() {
             },
             {
                 label: `Télécharger le launcher`,
-                url: `https://github.com/TheFiery/StealthLauncher/releases/tag/1.1.1`,
+                url: `https://github.com/TheFiery/StealthLauncher/releases/tag/1.1.3`,
             }
         ]
     });
