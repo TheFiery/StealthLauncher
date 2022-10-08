@@ -135,7 +135,7 @@ RPC.on('ready', async () =>  {
 
     setInterval(() => {
         setActivity();
-    }, 3000 * 1000);
+    }, 10000 * 10000);
 });
 
 RPC.login({ clientId}).catch(err =>  console.error(err));
