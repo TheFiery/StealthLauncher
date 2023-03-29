@@ -1,10 +1,9 @@
 const builder = require('electron-builder')
 const { preductname } = require('./package.json')
 
-
 builder.build({
     config: {
-        generateUpdatesFilesForAllChannels: true,
+        generateUpdatesFilesForAllChannels: false,
         appId: preductname,
         productName: preductname,
         artifactName: "${productName}-${os}-${arch}.${ext}",
@@ -12,6 +11,10 @@ builder.build({
         directories: { "output": "dist" },
         compression: 'maximum',
         asar: true,
+        publish: [{
+            provider: "github",
+            releaseType: 'release',
+        }],
         win: {
             icon: "./src/assets/images/icon.ico",
             target: [{

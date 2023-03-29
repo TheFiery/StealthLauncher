@@ -14,9 +14,6 @@ const UpdateWindow = require("./assets/js/windows/updateWindow.js");
 const MainWindow = require("./assets/js/windows/mainWindow.js");
 
 
-const clientId = '1005825047052697640';
-const DiscordRPC = require('discord-rpc');
-const RPC = new DiscordRPC.Client({ transport: 'ipc' }); 
 
 let data
 let dev = process.env.NODE_ENV === 'dev';
@@ -43,7 +40,7 @@ ipcMain.on('main-window-open', () => MainWindow.createWindow())
 ipcMain.on('main-window-dev-tools', () => MainWindow.getWindow().webContents.openDevTools())
 ipcMain.on('main-window-close', () => MainWindow.destroyWindow())
 ipcMain.on('main-window-progress', (event, options) => MainWindow.getWindow().setProgressBar(options.DL / options.totDL))
-ipcMain.on('main-window-progress-reset', (event, options) => MainWindow.getWindow().setProgressBar(options.DL / options.totDL))
+ipcMain.on('main-window-progress-reset', () => MainWindow.getWindow().setProgressBar(0))
 ipcMain.on('main-window-minimize', () => MainWindow.getWindow().minimize())
 
 ipcMain.on('main-window-maximize', () => {
@@ -104,38 +101,3 @@ autoUpdater.on('download-progress', (progress) => {
     if (updateWindow) updateWindow.webContents.send('download-progress', progress);
 })
 
-DiscordRPC.register(clientId);
-
-async function setActivity() {
-    if (!RPC) return;
-    RPC.setActivity({
-        details: `Viens avec nous !`,
-        state: `Joue à Minecraft moddé`,
-        startTimestamp: Date.now(),
-        largeImageKey: `large_image`,
-        largeImageText: `Minecraft Moddé`,
-        smallImageKey: `small_image`,
-        smallImageText: `+ 50 Mods`,
-        instance: false,
-        buttons: [
-            {
-                label: `Rejoindre le serveur discord!`,
-                url: `https://discord.gg/vDb42mqssH`,
-            },
-            {
-                label: `Télécharger le launcher`,
-                url: `https://github.com/TheFiery/StealthLauncher/releases/tag/1.1.3`,
-            }
-        ]
-    });
-};
-
-RPC.on('ready', async () =>  {
-    setActivity();
-
-    setInterval(() => {
-        setActivity();
-    }, 10000 * 10000);
-});
-
-RPC.login({ clientId}).catch(err =>  console.error(err));

@@ -7,7 +7,6 @@
     border-top-right-radius: 40px;
     background: #00000080;
     display: flex;
-    box-shadow: 0 0 5px #5017b4;
 }
 
 .player-head {
@@ -38,7 +37,6 @@
     border: none;
     border-radius: 15px;
     transition: all 0.5s cubic-bezier(1, 0.46, 0, 1.29);
-    
 }
 
 .settings-btn:hover {
@@ -66,9 +64,9 @@
     height: 37px;
     border-radius: 20px;
     border: none;
-    background: #0000009d;
+    background: #00bd7a;
     font: normal normal bold 20px/25px Poppins;
-    color: #ffffff;
+    color: #121212;
     margin: 15px 0;
     box-shadow: 0 0 5px #00bd7a;
 }
@@ -231,13 +229,12 @@
     background-color: #292929;
     border-radius: 10px;
     transition: opacity 1s;
-    opacity: .9;
-    box-shadow: 0 0 5px #00bd7a;
+    opacity: .4;
 }
 
 .server:hover {
     transition: opacity 1s;
-    opacity: 9;
+    opacity: 1;
 }
 
 .server-img {
